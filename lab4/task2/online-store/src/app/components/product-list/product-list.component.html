@@ -1,0 +1,33 @@
+<div class="page">
+  <header class="top">
+    <div class="brand">Kaspi.kz</div>
+    <div class="lang">Рус</div>
+  </header>
+
+  <section class="hero">
+    <h1>Интернет-магазин на Kaspi.kz</h1>
+
+    <div class="categories">
+      @for (c of categories; track c.id) {
+        <a class="cat" [href]="c.link" target="_blank" rel="noopener noreferrer">
+          <div class="cat-img">
+            <img [src]="c.image" [alt]="c.name" />
+          </div>
+          <div class="cat-name">{{ c.name }}</div>
+        </a>
+      }
+    </div>
+  </section>
+
+  <section class="products">
+    <h2>Товары</h2>
+    <p class="sub">Catalog of products from kaspi.kz (10+ items)</p>
+
+    <div class="grid">
+      @for (p of products; track p.id) {
+        <app-product-card [product]="p" />
+      }
+    </div>
+  </section>
+</div>
+
